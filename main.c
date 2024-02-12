@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <unistd.h> //Linux/Mac
+// #include <unistd.h> //Linux/Mac
 
 typedef struct {
     int code;
@@ -81,6 +81,7 @@ void menu(){
         exit(0);
     default:
         printf("Invalid option!\n");
+        sleep(3);
         menu();
         break;
     }
@@ -102,6 +103,10 @@ void registerProd(){
 
     count_product++;
 
+    sleep(2);
+
+    menu();
+
 }
 
 void listProd(){
@@ -114,6 +119,8 @@ void listProd(){
             printf("--------------------\n");
             sleep(1);
         }
+        sleep(2);
+        menu();
     } else {
         printf("We don't have products registered yet!\n");
         sleep(2);
@@ -179,6 +186,7 @@ void buyProd(){
 
     } else {
         printf("There aren't product to sell.\n");
+        printf("\n");
         sleep(2);
         menu();
     }
@@ -194,6 +202,8 @@ void viewCart(){
             printf("--------------------\n");
             sleep(1);
         }
+        sleep(2);
+        menu();
 
     } else {
         printf("We don't have any products in the cart yet!\n");
